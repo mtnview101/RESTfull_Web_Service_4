@@ -7,7 +7,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 @Path("/json")
 public class BMI_JSON {   
-	
+// http://localhost:89/RWS4/calc/json/imperial?height=71&weight=179	
        @GET
        @Path("/imperial")
        @Produces("application/json")
@@ -19,7 +19,8 @@ public class BMI_JSON {
               String result = df.format(bmi).toString();
 /*return "<calc unit=\"imperial\">" + "<height>" + h + "</height>" + "<weight>" + w + "</weight>" + "<bmi>" + result + "</bmi>" + "</calc>";  }*/
               return "{\"calc\": {\"unit\": \"metric\", \"height\": " + h + "\"weight\": " + w + "\"bmi\": " + result + "}}";	}
-       
+ 
+//  http://localhost:89/RWS4/calc/json/metric?height=180&weight=81       
        @GET
        @Path("/metric")
        @Produces("application/json")

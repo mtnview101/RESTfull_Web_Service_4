@@ -6,8 +6,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 @Path("/xml")
-public class BMI_XML {   
+public class BMI_XML {  
 	
+// http://localhost:89/RWS4/calc/xml/imperial?height=71&weight=179	
        @GET
        @Path("/imperial")
        @Produces("application/xml")
@@ -19,6 +20,7 @@ public class BMI_XML {
               String result = df.format(bmi).toString();
 return "<calc unit=\"imperial\">" + "<height>" + h + "</height>" + "<weight>" + w + "</weight>" + "<bmi>" + result + "</bmi>" + "</calc>";  }
        
+// http://localhost:89/RWS4/calc/xml/metric?height=180&weight=81       
        @GET
        @Path("/metric")
        @Produces("application/xml")
